@@ -1,0 +1,118 @@
+
+**** Build of configuration Debug for project floatPoint_directIIR_passBand ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../src/floatPoint_directIIR.c'
+'Invoking: C5500 Compiler'
+"C:/ti/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5515 --memory_model=large -g --include_path="C:/ti/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="C:/Users/Anthony/Documents/RTDSP_lab471/floatPoint_directIIR_passBand/inc" --define=c5505 --display_error_number --diag_warning=225 --ptrdiff_size=16 --preproc_with_compile --preproc_dependency="src/floatPoint_directIIR.pp" --obj_directory="src"  "../src/floatPoint_directIIR.c"
+'Finished building: ../src/floatPoint_directIIR.c'
+' '
+'Building file: ../src/floatPoint_directIIRTest.c'
+'Invoking: C5500 Compiler'
+"C:/ti/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5515 --memory_model=large -g --include_path="C:/ti/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="C:/Users/Anthony/Documents/RTDSP_lab471/floatPoint_directIIR_passBand/inc" --define=c5505 --display_error_number --diag_warning=225 --ptrdiff_size=16 --preproc_with_compile --preproc_dependency="src/floatPoint_directIIRTest.pp" --obj_directory="src"  "../src/floatPoint_directIIRTest.c"
+'Finished building: ../src/floatPoint_directIIRTest.c'
+' '
+'Building target: floatPoint_directIIR_passBand.out'
+'Invoking: C5500 Linker'
+"C:/ti/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5515 --memory_model=large -g --define=c5505 --display_error_number --diag_warning=225 --ptrdiff_size=16 -z -m"floatPoint_directIIR_passBand.map" --stack_size=0x200 --heap_size=0x400 -i"C:/ti/ccsv5/tools/compiler/c5500_4.4.1/lib" -i"C:/ti/ccsv5/tools/compiler/c5500_4.4.1/include" --reread_libs --display_error_number --warn_sections --xml_link_info="floatPoint_directIIR_passBand_linkInfo.xml" --rom_model --sys_stacksize=0x200 -o "floatPoint_directIIR_passBand.out"  "./src/floatPoint_directIIRTest.obj" "./src/floatPoint_directIIR.obj" "../C5505.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: floatPoint_directIIR_passBand.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project floatPoint_directIIR ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project floatPoint_directIIR_passBand ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../src/floatPoint_directIIRTest.c'
+'Invoking: C5500 Compiler'
+"C:/ti/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5515 --memory_model=large -g --include_path="C:/ti/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="C:/Users/Anthony/Documents/RTDSP_lab471/floatPoint_directIIR_passBand/inc" --define=c5505 --display_error_number --diag_warning=225 --ptrdiff_size=16 --preproc_with_compile --preproc_dependency="src/floatPoint_directIIRTest.pp" --obj_directory="src"  "../src/floatPoint_directIIRTest.c"
+"../src/floatPoint_directIIRTest.c", line 106: error #20: identifier "den" is undefined
+
+1 error detected in the compilation of "../src/floatPoint_directIIRTest.c".
+>> Compilation failure
+gmake: *** [src/floatPoint_directIIRTest.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project floatPoint_directIIR_passBand ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../src/floatPoint_directIIRTest.c'
+'Invoking: C5500 Compiler'
+"C:/ti/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5515 --memory_model=large -g --include_path="C:/ti/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="C:/Users/Anthony/Documents/RTDSP_lab471/floatPoint_directIIR_passBand/inc" --define=c5505 --display_error_number --diag_warning=225 --ptrdiff_size=16 --preproc_with_compile --preproc_dependency="src/floatPoint_directIIRTest.pp" --obj_directory="src"  "../src/floatPoint_directIIRTest.c"
+"../src/floatPoint_directIIRTest.c", line 106: error #20: identifier "den" is undefined
+
+1 error detected in the compilation of "../src/floatPoint_directIIRTest.c".
+>> Compilation failure
+gmake: *** [src/floatPoint_directIIRTest.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project floatPoint_directIIR ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project floatPoint_directIIR_passBand ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../src/floatPoint_directIIRTest.c'
+'Invoking: C5500 Compiler'
+"C:/ti/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5515 --memory_model=large -g --include_path="C:/ti/ccsv5/tools/compiler/c5500_4.4.1/include" --include_path="C:/Users/Anthony/Documents/RTDSP_lab471/floatPoint_directIIR_passBand/inc" --define=c5505 --display_error_number --diag_warning=225 --ptrdiff_size=16 --preproc_with_compile --preproc_dependency="src/floatPoint_directIIRTest.pp" --obj_directory="src"  "../src/floatPoint_directIIRTest.c"
+'Finished building: ../src/floatPoint_directIIRTest.c'
+' '
+'Building target: floatPoint_directIIR_passBand.out'
+'Invoking: C5500 Linker'
+"C:/ti/ccsv5/tools/compiler/c5500_4.4.1/bin/cl55" -v5515 --memory_model=large -g --define=c5505 --display_error_number --diag_warning=225 --ptrdiff_size=16 -z -m"floatPoint_directIIR_passBand.map" --stack_size=0x200 --heap_size=0x400 -i"C:/ti/ccsv5/tools/compiler/c5500_4.4.1/lib" -i"C:/ti/ccsv5/tools/compiler/c5500_4.4.1/include" --reread_libs --display_error_number --warn_sections --xml_link_info="floatPoint_directIIR_passBand_linkInfo.xml" --rom_model --sys_stacksize=0x200 -o "floatPoint_directIIR_passBand.out"  "./src/floatPoint_directIIRTest.obj" "./src/floatPoint_directIIR.obj" "../C5505.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: floatPoint_directIIR_passBand.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project floatPoint_directIIR_passBand ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project floatPoint_directIIR_passBand ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project floatPoint_directIIR_passBand ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project floatPoint_directIIR_passBand ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project floatPoint_directIIR_passBand ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
