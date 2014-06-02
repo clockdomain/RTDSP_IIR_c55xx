@@ -1,0 +1,119 @@
+/*
+* floatPoint_directIIRTest.c
+*
+*  Created on: May 25, 2012
+*      Author: BLEE
+*
+*  Description: This is the test program for floating-point direct form-I IIR filter
+*
+*  For the book "Real Time Digital Signal Processing:
+*                Fundamentals, Implementation and Application, 3rd Ed"
+*                By Sen M. Kuo, Bob H. Lee, and Wenshun Tian
+*                Publisher: John Wiley and Sons, Ltd
+*
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "tistdtypes.h"
+#include "floatPointIIR.h"
+
+// Coefficient length
+#define NL  25
+#define DL  25
+
+// Filter coefficients obtained from MATLAB script
+/* 
+   Rp=0.1;                                    % Passband ripple
+   Rs=60;                                     % Stopband attenuation
+   [N,Wn]=ellipord(836/4000,1300/4000,Rp,Rs); % Filter order & scaling factor
+   [b,a]=ellip(N,Rp,Rs,Wn);                   % Lowpass IIR filter
+   [num,den]=iirlp2bp(b,a,0.5,[0.25, 0.75]);  % Bandpass IIR filter
+*/
+
+double num[NL]={
+ 	0.2267,	0.11908,	-1.047,	-0.35349,	3.3629,	0.85274,
+	-7.2703,	-1.1115,	12.5723,	1.1415,	-16.9284,	-0.37786,
+	18.9167,	-0.37786,	-16.9284,	1.1415,	12.5723,	-1.1115,
+	-7.2703,	0.85274,	3.3629,	-0.35349,	-1.047,	0.11908,
+	0.2267,
+};
+
+double den[NL]={
+ 	1,	0.46145,	-3.5372,	-1.0777,	8.2941,	1.8606,
+	-13.5401,	-1.8458,	17.8651,	1.4172,	-18.6418,	-0.35659,
+	16.2132,	-0.32585,	-11.4242,	0.71473,	6.7212,	-0.54549,
+	-3.0852,	0.32902,	1.1342,	-0.11166,	-0.29065,	0.033562,
+	0.057773,
+};
+// Filter delay lines
+double x[NL],y[DL];
+
+void main()
+{
+    double in;
+    Int16  i,z,c;
+    FILE   *fpIn,*fpOut;
+    Int8   temp[2];
+    Uint8  waveHeader[44];
+
+    printf("Enter 1 for using PCM file, enter 2 for using WAV file\n");
+    scanf ("%d", &c);
+
+    if (c == 2)
+    {
+    	fpIn = fopen("..\\data\\input.wav", "rb");
+    	fpOut = fopen("..\\data\\output.wav", "wb");
+    }
+    else
+    {
+    	fpIn = fopen("..\\data\\input.pcm", "rb");
+    	fpOut = fopen("..\\data\\output.pcm", "wb");
+    }
+    // Open file for read input data
+    if (fpIn == NULL)
+    {
+        printf("Can't open input data file\n");
+        exit(0);
+    }
+
+    if (c == 2)									// Create WAVE data file header
+    {
+    	fread(waveHeader, sizeof(Int8), 44, fpIn);
+    	fwrite(waveHeader, sizeof(Int8), 44, fpOut);
+    }
+
+    // Clear delay lines
+    for(i=0; i<NL; i++)
+    {
+        x[i] = 0.0;
+    }
+    for(i=0; i<DL; i++)
+    {
+        y[i] = 0.0;
+    }
+
+	printf("Exp --- IIR filter experiment\n");
+
+	// Filter test
+    while (fread(temp, sizeof(Int8), 2, fpIn) == 2)
+    {
+        // Convert 16-bit PCM data to floating-point format
+        z = (temp[0]&0xFF)|(temp[1]<<8);
+        in = (double)z/32767.0;
+
+        // Filter the data
+        floatPoint_IIR(in, x, y, num, NL, den, DL);
+
+        // Convert the floating-point data back to 16-bit PCM data format
+        z = (Int16)(y[0]*32767.0 + 0.5);
+        temp[0] = (z&0xFF);
+        temp[1] = (z>>8)&0xFF;
+        fwrite(temp, sizeof(Int8), 2, fpOut);
+    }
+  
+    fclose(fpIn);
+    fclose(fpOut);
+    printf("Exp --- completed\n");
+
+}
